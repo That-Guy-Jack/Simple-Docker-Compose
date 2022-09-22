@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  mariadb:
+    image: mariadb:latest
+    restart: unless-stopped
+    volumes:
+      - ./mariadb/data:/var/lib/mysql
+      - ./mariadb/config:/etc/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MARIADB_AUTO_UPGRADE= true
+      - MARIADB_ROOT_PASSWORD= 9H8CUIOs3Fgng3f5
+      - MARIADB_ROOT_HOST= localhost
